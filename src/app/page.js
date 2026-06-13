@@ -1,65 +1,153 @@
-import Image from "next/image";
+import Link from "next/link";
+import { siteData } from "@/lib/data";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.js file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="flex flex-col gap-32">
+      {/* Hero Section */}
+      <section className="mt-16 flex flex-col items-start gap-8">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white max-w-3xl leading-tight">
+          Architecting Products.<br />
+          Shipping Code.<br />
+          <span className="text-[#a1a1aa]">Scaling Systems.</span>
+        </h1>
+        <p className="text-lg sm:text-xl text-[#a1a1aa] max-w-2xl leading-relaxed">
+          14 years of cross-functional leadership bridging engineering with data-driven product management. I build functional tools and scalable simulators designed to solve complex operational friction.
+        </p>
+        <div className="flex flex-wrap items-center gap-4 mt-4">
+          <a href="#portfolio" className="bg-white text-black px-6 py-3 font-semibold hover:bg-gray-200 transition-colors">
+            [ View Portfolio ]
+          </a>
+          <a href="#partner" className="border border-[#333333] px-6 py-3 font-semibold hover:bg-[#111111] hover:border-gray-400 transition-colors text-white">
+            [ Let's Partner ]
+          </a>
+        </div>
+      </section>
+
+      {/* Shipped Product Grid */}
+      <section id="portfolio" className="scroll-mt-24">
+        <div className="mb-12">
+          <h2 className="text-3xl font-bold tracking-tight text-white">Shipped Products</h2>
+          <p className="text-[#a1a1aa] mt-2">Tools, utilities, and simulators driving measurable impact.</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {siteData.products.map((product) => (
+            <div key={product.id} className="group border border-[#333333] bg-[#0a0a0a] p-8 flex flex-col justify-between hover:border-gray-500 transition-colors">
+              <div>
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">{product.title}</h3>
+                <p className="text-[#a1a1aa] mb-6 leading-relaxed">
+                  {product.metric} 
+                  {/* TODO: Map to Sanity Studio fetch for dynamic metric updates */}
+                </p>
+              </div>
+              <div className="mt-auto">
+                <a href={product.ctaLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm font-semibold text-white group-hover:text-blue-400 transition-colors">
+                  {product.ctaText}
+                  <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="2" d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* About & Video Resume Section */}
+      <section className="border-t border-[#333333] pt-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="flex flex-col gap-6">
+            <h2 className="text-3xl font-bold tracking-tight text-white">The Narrative</h2>
+            <div className="text-[#a1a1aa] space-y-4 leading-relaxed">
+              <p>
+                My career spans 14 years bridging the gap between rigorous software engineering and high-impact product management. Starting with a strong foundation in C++ engineering, I evolved into a product leader who understands both the technical constraints and the business scale.
+              </p>
+              <p>
+                Today, as a solopreneur and consultant, I focus on building pragmatic, scalable solutions. Whether it's crafting PM simulators to train the next generation of product leaders or developing functional utilities that eliminate operational drag, my approach is always data-driven and user-centric.
+              </p>
+            </div>
+            <div className="mt-4">
+              <a href={siteData.resumePdfUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center border border-[#333333] px-6 py-3 font-semibold hover:bg-[#111111] hover:border-gray-400 transition-colors text-white">
+                <svg className="mr-3 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                [ Download CV (PDF) ]
+              </a>
+            </div>
+          </div>
+          <div className="flex flex-col gap-4">
+            {/* Video Player Placeholder */}
+            <div className="relative w-full aspect-video bg-[#111111] border border-[#333333] flex items-center justify-center group overflow-hidden">
+              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center z-10">
+                <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center border border-white/20 hover:scale-105 transition-transform cursor-pointer">
+                  <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+              </div>
+              <p className="text-[#555555] font-mono text-sm absolute bottom-4 right-4 z-0">Video_Resume_Placeholder.mp4</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Ananth in Action - 3 Photo Grid */}
+        <div className="mt-16">
+          <h3 className="text-sm font-mono text-[#555555] mb-4 uppercase tracking-widest">Ananth in Action</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {[1, 2, 3].map((item) => (
+              <div key={item} className="aspect-[4/3] bg-[#111111] border border-[#333333] flex items-center justify-center relative overflow-hidden group">
+                {/* Placeholder for actual images */}
+                <p className="text-[#555555] font-mono text-xs z-10 group-hover:opacity-0 transition-opacity">Image_{item}.jpg</p>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                  <p className="text-xs text-white font-mono">Action shot {item}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Inbound Pipeline Form */}
+      <section id="partner" className="border-t border-[#333333] pt-24 pb-12 scroll-mt-24">
+        <div className="max-w-2xl mx-auto text-center mb-12">
+          <h2 className="text-3xl font-bold tracking-tight text-white">Inbound Pipeline</h2>
+          <p className="text-[#a1a1aa] mt-4 leading-relaxed italic border-l-2 border-[#333333] pl-4 text-left">
+            "Outside of my core corporate focus, I selectively engage with the ecosystem through speaking, panel discussions, and weekend workshops."
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+        
+        <form className="max-w-2xl mx-auto space-y-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="space-y-2">
+              <label htmlFor="name" className="text-sm font-medium text-[#a1a1aa]">Full Name</label>
+              <input type="text" id="name" required className="w-full bg-[#0a0a0a] border border-[#333333] p-3 text-white focus:outline-none focus:border-white transition-colors" placeholder="Jane Doe" />
+            </div>
+            <div className="space-y-2">
+              <label htmlFor="email" className="text-sm font-medium text-[#a1a1aa]">Email Address</label>
+              <input type="email" id="email" required className="w-full bg-[#0a0a0a] border border-[#333333] p-3 text-white focus:outline-none focus:border-white transition-colors" placeholder="jane@company.com" />
+            </div>
+          </div>
+          
+          <div className="space-y-2">
+            <label htmlFor="organization" className="text-sm font-medium text-[#a1a1aa]">Organization</label>
+            <input type="text" id="organization" className="w-full bg-[#0a0a0a] border border-[#333333] p-3 text-white focus:outline-none focus:border-white transition-colors" placeholder="Company or Institution Name" />
+          </div>
+
+          <div className="space-y-2">
+            <label htmlFor="intent" className="text-sm font-medium text-[#a1a1aa]">Engagement Intent</label>
+            <select id="intent" className="w-full bg-[#0a0a0a] border border-[#333333] p-3 text-white focus:outline-none focus:border-white transition-colors appearance-none">
+              <option value="speaking">Speaking / Panel Discussion</option>
+              <option value="workshop">Weekend Workshop</option>
+              <option value="freelance">Freelance Consulting</option>
+              <option value="hiring">Hiring / Full-time Opportunity</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div className="space-y-2">
+            <label htmlFor="message" className="text-sm font-medium text-[#a1a1aa]">Message</label>
+            <textarea id="message" required rows={5} className="w-full bg-[#0a0a0a] border border-[#333333] p-3 text-white focus:outline-none focus:border-white transition-colors resize-none" placeholder="Briefly describe the context of your inquiry..."></textarea>
+          </div>
+
+          <button type="submit" className="w-full bg-white text-black font-bold py-4 hover:bg-gray-200 transition-colors">
+            [ Submit Inquiry ]
+          </button>
+        </form>
+      </section>
     </div>
   );
 }
