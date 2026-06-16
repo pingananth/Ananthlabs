@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { siteData } from "@/lib/data";
+import { sendGAEvent } from "@next/third-parties/google";
 
 export default function Home() {
   return (
@@ -15,10 +18,10 @@ export default function Home() {
           14 years of cross-functional leadership bridging engineering with data-driven product management. I build functional tools and scalable simulators designed to solve complex operational friction.
         </p>
         <div className="flex flex-wrap items-center gap-4 mt-4">
-          <a href="#portfolio" className="bg-white text-black px-6 py-3 font-semibold hover:bg-gray-200 transition-colors">
+          <a href="#portfolio" onClick={() => sendGAEvent({ event: 'click_view_portfolio', value: 'hero' })} className="bg-white text-black px-6 py-3 font-semibold hover:bg-gray-200 transition-colors">
             [ View Portfolio ]
           </a>
-          <a href="#partner" className="border border-[#333333] px-6 py-3 font-semibold hover:bg-[#111111] hover:border-gray-400 transition-colors text-white">
+          <a href="#partner" onClick={() => sendGAEvent({ event: 'click_partner', value: 'hero' })} className="border border-[#333333] px-6 py-3 font-semibold hover:bg-[#111111] hover:border-gray-400 transition-colors text-white">
             [ Let's Partner ]
           </a>
         </div>
@@ -41,7 +44,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="mt-auto">
-                <a href={product.ctaLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm font-semibold text-white group-hover:text-blue-400 transition-colors">
+                <a href={product.ctaLink} onClick={() => sendGAEvent({ event: 'click_product', value: product.id })} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm font-semibold text-white group-hover:text-blue-400 transition-colors">
                   {product.ctaText}
                   <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="2" d="M5 12h14M12 5l7 7-7 7"></path></svg>
                 </a>
@@ -65,7 +68,7 @@ export default function Home() {
               </p>
             </div>
             <div className="mt-4">
-              <a href={siteData.resumePdfUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center border border-[#333333] px-6 py-3 font-semibold hover:bg-[#111111] hover:border-gray-400 transition-colors text-white">
+              <a href={siteData.resumePdfUrl} onClick={() => sendGAEvent({ event: 'download_cv', value: 'about_section' })} target="_blank" rel="noopener noreferrer" className="inline-flex items-center border border-[#333333] px-6 py-3 font-semibold hover:bg-[#111111] hover:border-gray-400 transition-colors text-white">
                 <svg className="mr-3 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
                 [ Download CV (PDF) ]
               </a>
@@ -110,7 +113,11 @@ export default function Home() {
           </p>
         </div>
         
-        <form className="max-w-2xl mx-auto space-y-6">
+        <form className="max-w-2xl mx-auto space-y-6" onSubmit={(e) => {
+          e.preventDefault();
+          sendGAEvent({ event: 'form_submit', value: 'inbound_pipeline' });
+          alert("Thanks for your inquiry. This is a placeholder.");
+        }}>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div className="space-y-2">
               <label htmlFor="name" className="text-sm font-medium text-[#a1a1aa]">Full Name</label>
