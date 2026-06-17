@@ -1,11 +1,11 @@
 // Update all external and social URLs here
 export const siteData = {
   socials: {
-    linkedin: "https://linkedin.com/in/yourprofile",
-    github: "https://github.com/yourprofile",
-    youtube: "https://youtube.com/yourprofile",
-    x: "https://x.com/yourprofile",
-    instagram: "https://instagram.com/yourprofile",
+    linkedin: "https://www.linkedin.com/in/ananthasubramaniamr/",
+    github: "https://github.com/pingananth",
+    youtube: "https://www.youtube.com/@ananthasubramaniam4550",
+    x: "https://x.com/pingananth",
+    instagram: "https://www.instagram.com/pingananth/",
   },
   products: [
     {
@@ -13,7 +13,7 @@ export const siteData = {
       title: "PM Sandbox & Simulators",
       metric: "Secured paying enterprise cohorts within 30 days of launch.",
       ctaText: "View Live",
-      ctaLink: "https://example.com/pm-sandbox",
+      ctaLink: "https://getsimul.com",
     },
     {
       id: "speak-hindi-fast",
@@ -48,21 +48,21 @@ export const siteData = {
       title: "Break the Ice",
       metric: "Connecting professionals through structured networking.", // TODO: Map to Sanity Studio fetch
       ctaText: "View Live",
-      ctaLink: "#",
+      ctaLink: "https://divisioned229.org",
     },
     {
       id: "division-director",
       title: "My Division Director Campaign",
       metric: "Data-driven leadership campaign execution.", // TODO: Map to Sanity Studio fetch
       ctaText: "View Details",
-      ctaLink: "#",
+      ctaLink: "https://ananth4dd.netlify.app/",
     },
     {
       id: "mini-paper",
       title: "MyMiniPaper",
       metric: "Summarizing complex academic research.", // TODO: Map to Sanity Studio fetch
       ctaText: "Read More",
-      ctaLink: "#",
+      ctaLink: "https://myminipaper.com",
     }
   ],
   resumePdfUrl: "/cv.pdf"

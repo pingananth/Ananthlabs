@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { siteData } from "@/lib/data";
 import { sendGAEvent } from "@next/third-parties/google";
 
@@ -74,15 +75,17 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="flex flex-col gap-4">
-            {/* Video Player Placeholder */}
-            <div className="relative w-full aspect-video bg-[#111111] border border-[#333333] flex items-center justify-center group overflow-hidden">
-              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center z-10">
-                <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center border border-white/20 hover:scale-105 transition-transform cursor-pointer">
-                  <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                </div>
-              </div>
-              <p className="text-[#555555] font-mono text-sm absolute bottom-4 right-4 z-0">Video_Resume_Placeholder.mp4</p>
+          <div className="flex flex-col gap-4 items-center justify-center">
+            {/* Video Resume Embed (YouTube Short) */}
+            <div className="relative w-full max-w-sm aspect-[9/16] border border-[#333333] bg-[#0a0a0a] overflow-hidden shadow-2xl">
+              <iframe 
+                src="https://www.youtube.com/embed/qadMAz1dJW0?autoplay=0&rel=0" 
+                title="Ananth Video Resume"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+              ></iframe>
             </div>
           </div>
         </div>
@@ -91,7 +94,19 @@ export default function Home() {
         <div className="mt-16">
           <h3 className="text-sm font-mono text-[#555555] mb-4 uppercase tracking-widest">Ananth in Action</h3>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {[1, 2, 3].map((item) => (
+            <div className="aspect-[4/3] bg-[#111111] border border-[#333333] flex items-center justify-center relative overflow-hidden group">
+              <Image 
+                src="/profile.jpg" 
+                alt="Ananth speaking at an event" 
+                fill 
+                className="object-cover"
+                sizes="(max-width: 640px) 100vw, 33vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                <p className="text-xs text-white font-mono">Speaking on System Architecture</p>
+              </div>
+            </div>
+            {[2, 3].map((item) => (
               <div key={item} className="aspect-[4/3] bg-[#111111] border border-[#333333] flex items-center justify-center relative overflow-hidden group">
                 {/* Placeholder for actual images */}
                 <p className="text-[#555555] font-mono text-xs z-10 group-hover:opacity-0 transition-opacity">Image_{item}.jpg</p>
@@ -104,10 +119,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Inbound Pipeline Form */}
+      {/* Let's Partner Form */}
       <section id="partner" className="border-t border-[#333333] pt-24 pb-12 scroll-mt-24">
         <div className="max-w-2xl mx-auto text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tight text-white">Inbound Pipeline</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-white">Let's Partner</h2>
           <p className="text-[#a1a1aa] mt-4 leading-relaxed italic border-l-2 border-[#333333] pl-4 text-left">
             "Outside of my core corporate focus, I selectively engage with the ecosystem through speaking, panel discussions, and weekend workshops."
           </p>
