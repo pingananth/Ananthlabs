@@ -1,17 +1,8 @@
 "use client";
 
 import { useState } from "react";
-
-// Dummy data placeholder
-// TODO: Map to Sanity Studio fetch
-const mockLogs = [
-  { id: 1, type: "Leading", location: "San Francisco, CA", year: "2023", caption: "Scaling product teams post-series B.", heightClass: "h-64" },
-  { id: 2, type: "Exploring", location: "Tokyo, JP", year: "2022", caption: "Architectural inspiration in Shinjuku.", heightClass: "h-96" },
-  { id: 3, type: "Building", location: "Remote", year: "2024", caption: "Late night shipping v2.0.", heightClass: "h-72" },
-  { id: 4, type: "Leading", location: "London, UK", year: "2021", caption: "Speaking on data-driven frameworks.", heightClass: "h-80" },
-  { id: 5, type: "Exploring", location: "Patagonia", year: "2023", caption: "Disconnecting to reconnect.", heightClass: "h-64" },
-  { id: 6, type: "Building", location: "Austin, TX", year: "2024", caption: "Whiteboarding the new engine.", heightClass: "h-96" },
-];
+import { siteData } from "@/lib/data";
+import Image from "next/image";
 
 export default function VisualLog() {
   const [filter, setFilter] = useState("All");
@@ -19,8 +10,8 @@ export default function VisualLog() {
   const filters = ["All", "Leading", "Exploring", "Building"];
 
   const filteredLogs = filter === "All" 
-    ? mockLogs 
-    : mockLogs.filter(log => log.type === filter);
+    ? siteData.visualLogs 
+    : siteData.visualLogs.filter(log => log.type === filter);
 
   return (
     <div className="flex flex-col gap-12">
@@ -55,8 +46,18 @@ export default function VisualLog() {
             key={log.id} 
             className={`relative break-inside-avoid border border-[#333333] bg-[#0a0a0a] group overflow-hidden ${log.heightClass} flex flex-col items-center justify-center`}
           >
-            {/* Image Placeholder */}
-            <span className="font-mono text-[#333333] group-hover:opacity-0 transition-opacity">Image_{log.id}</span>
+            {/* Image Placeholder or Actual Image */}
+            {log.imageUrl ? (
+              <Image 
+                src={log.imageUrl} 
+                alt={log.caption} 
+                fill 
+                className="object-cover"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              />
+            ) : (
+              <span className="font-mono text-[#333333] group-hover:opacity-0 transition-opacity">Image_{log.id}</span>
+            )}
             
             {/* Hover Overlay */}
             <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">

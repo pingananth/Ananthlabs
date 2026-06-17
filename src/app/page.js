@@ -106,15 +106,33 @@ export default function Home() {
                 <p className="text-xs text-white font-mono">Speaking on System Architecture</p>
               </div>
             </div>
-            {[2, 3].map((item) => (
-              <div key={item} className="aspect-[4/3] bg-[#111111] border border-[#333333] flex items-center justify-center relative overflow-hidden group">
-                {/* Placeholder for actual images */}
-                <p className="text-[#555555] font-mono text-xs z-10 group-hover:opacity-0 transition-opacity">Image_{item}.jpg</p>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                  <p className="text-xs text-white font-mono">Action shot {item}</p>
-                </div>
+            {/* Slot 2 */}
+            <div className="aspect-[4/3] bg-[#111111] border border-[#333333] flex items-center justify-center relative overflow-hidden group">
+              <Image 
+                src="/profile2.jpg" 
+                alt="Ananth presenting at Toastmasters" 
+                fill 
+                className="object-cover"
+                sizes="(max-width: 640px) 100vw, 33vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                <p className="text-xs text-white font-mono">Toastmasters Presentation</p>
               </div>
-            ))}
+            </div>
+
+            {/* Slot 3 */}
+            <div className="aspect-[4/3] bg-[#111111] border border-[#333333] flex items-center justify-center relative overflow-hidden group">
+              <Image 
+                src="/profile3.jpg" 
+                alt="Ananth in a scenic outdoor setting" 
+                fill 
+                className="object-cover"
+                sizes="(max-width: 640px) 100vw, 33vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                <p className="text-xs text-white font-mono">Offsite</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
