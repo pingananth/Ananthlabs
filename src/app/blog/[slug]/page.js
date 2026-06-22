@@ -1,23 +1,14 @@
 import Link from "next/link";
+import { siteData } from "@/lib/data";
+import { notFound } from "next/navigation";
 
-// Dummy data fetching
-// TODO: Map to Sanity Studio fetch
+// Fetch article from siteData
 async function getArticle(slug) {
-  // Simulate network request
-  return {
-    slug,
-    title: slug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" "),
-    date: "Oct 12, 2025",
-    track: "Product & System Architecture",
-    content: `
-      <p>This is a placeholder for the article content. In a production environment, this content would be fetched dynamically from a headless CMS like Sanity.io or from local markdown files.</p>
-      <h2>The Core Architecture</h2>
-      <p>Building scalable systems requires a foundational understanding of the constraints and the bottlenecks that naturally emerge as usage grows. When we designed the PM simulator, the goal wasn't just to mimic real-world friction, but to do so at a scale that could accommodate thousands of concurrent sessions.</p>
-      <p>To achieve this, we decoupled the simulation engine from the state management layer, allowing us to spin up lightweight instances on demand. We utilized an event-driven architecture, leaning heavily on message queues to handle state transitions asynchronously. This approach not only improved the responsiveness of the UI but also gave us the resilience needed to survive traffic spikes during cohort launches.</p>
-      <h3>Empathy in the Code</h3>
-      <p>However, the real challenge wasn't just technical. It was ensuring that the simulator felt authentic to the PMs using it. This required a deep empathy for the day-to-day challenges of a product manager—the endless context switching, the vague requirements, and the pressure to deliver. By hardcoding these "frictions" into the simulation events, we created a learning environment that was both technically robust and deeply human.</p>
-    `
-  };
+  const article = siteData.articles.find(a => a.slug === slug);
+  if (!article) {
+    notFound();
+  }
+  return article;
 }
 
 export default async function ArticlePage({ params }) {

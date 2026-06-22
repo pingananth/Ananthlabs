@@ -87,5 +87,85 @@ export const siteData = {
     { id: 19, type: "Building", location: "Alwarpet", year: "2024", caption: "Panelists panel discussion Alwarpet.", heightClass: "h-64", imageUrl: "/visuallog/panelists-paneldiscussion-alwarpet.jpg" },
     { id: 20, type: "Exploring", location: "General", year: "2024", caption: "General Capture.", heightClass: "h-96", imageUrl: "/visuallog/IMG-20240915-WA0000.jpg" }
   ],
-  resumePdfUrl: "/cv.pdf"
+  resumePdfUrl: "/cv.pdf",
+  articles: [
+    {
+      slug: "book-review-how-to-win-friends-and-influence-people",
+      title: "Book Review: How to Win Friends & Influence People – Lessons That Changed My Life",
+      date: "Jun 22, 2026",
+      track: "Book Review",
+      content: `
+        <p><strong>Have you ever struggled to get someone to buy your idea—at work, at home, or even in a volunteer organization?</strong></p>
+        <p>If your answer is yes, then <em>How to Win Friends & Influence People</em> by Dale Carnegie is a book worth reading.</p>
+        <p>First published in 1936, this classic continues to influence leaders, managers, salespeople, parents, and communicators around the world. Despite being nearly a century old, its advice remains remarkably relevant even today.</p>
+        <h2>Why I Picked Up This Book</h2>
+        <p>I first read this book a few years ago when I was working as a Product Manager.</p>
+        <p>Unlike traditional managers, product managers rarely have direct authority over the teams they work with. We need to collaborate with engineering, design, sales, marketing, support, and leadership teams to achieve outcomes. Although these teams don't report to us, we still need to align them around a common vision.</p>
+        <p>I was looking for ways to influence stakeholders without authority, and that's when I came across Dale Carnegie's masterpiece.</p>
+        <h2>What the Book Covers</h2>
+        <p>The book is packed with practical and actionable advice that can be applied immediately. It covers topics such as:</p>
+        <ul>
+          <li>Fundamental principles of dealing with people</li>
+          <li>Ways to become more likable</li>
+          <li>Techniques to influence others' thinking</li>
+          <li>Methods to help people change without creating resistance</li>
+          <li>Principles for building happier relationships at home</li>
+        </ul>
+        <p>Rather than summarizing the entire book, I'd like to share the three lessons that had the biggest impact on my life.</p>
+        <h2>Lesson 1: Show People What <em>They</em> Want</h2>
+        <p>One of Carnegie's most powerful principles is simple:</p>
+        <blockquote>
+          <p>If you want to influence someone, don't focus on what you want. Focus on what they want and show them how to get it.</p>
+        </blockquote>
+        <p>This idea completely changed the way I communicate.</p>
+        <p>I use it regularly with my children.</p>
+        <p>My son loves noodles. Like many parents, my first instinct was to tell him that noodles are unhealthy and that he should avoid them. Unsurprisingly, that approach wasn't very effective.</p>
+        <p>Then I remembered Carnegie's principle.</p>
+        <p>My son wants to grow up quickly and become strong. So instead of talking about what I wanted, I connected healthy eating to what he wanted.</p>
+        <p>I told him:</p>
+        <p><em>"If you want to become strong, noodles won't help much. Vegetables will."</em></p>
+        <p>The message suddenly became relevant to him. Today, noodles are a weekend treat, and he's much more open to healthier food choices.</p>
+        <p>The lesson is universal: people are more motivated by their own desires than by our instructions.</p>
+        <h2>Lesson 2: Make It Their Idea</h2>
+        <p>Another principle that transformed my professional life is:</p>
+        <blockquote>
+          <p>People support what they help create.</p>
+        </blockquote>
+        <p>Earlier in my career, I often presented solutions directly to engineering teams and expected immediate agreement.</p>
+        <p>Over time, I learned a better approach.</p>
+        <p>Instead of providing answers, I started asking questions.</p>
+        <p>I would share pieces of information, discuss constraints, and guide conversations through thoughtful questioning. More often than not, the team would arrive at the solution themselves.</p>
+        <p>The outcome was dramatically different.</p>
+        <p>When people feel ownership of an idea, they are naturally more committed to implementing it.</p>
+        <p>This principle has helped me gain alignment on several initiatives at work and remains one of my most frequently used leadership techniques.</p>
+        <h2>Lesson 3: Appreciation Comes from the Heart; Flattery Comes from the Mouth</h2>
+        <p>This is perhaps my favorite lesson from the entire book.</p>
+        <p>Carnegie makes a clear distinction:</p>
+        <blockquote>
+          <p>Appreciation is sincere. Flattery is manipulation.</p>
+        </blockquote>
+        <p>People can usually sense the difference.</p>
+        <p>Since reading the book, I've made a conscious effort to pause before appreciating someone and identify what I genuinely value about them.</p>
+        <p>Whether it's a colleague who put extra effort into a project or my wife preparing a delicious meal, I try to express authentic appreciation rather than offering generic compliments.</p>
+        <p>The results have been remarkable.</p>
+        <p>Genuine appreciation strengthens relationships, builds trust, and often resolves tensions before they become conflicts.</p>
+        <h2>Why This Book Still Matters</h2>
+        <p>What amazes me most is that these ideas were written in 1936, yet they remain relevant in today's boardrooms, living rooms, and community organizations.</p>
+        <p>Technology has changed.</p>
+        <p>Communication platforms have changed.</p>
+        <p>Human nature hasn't.</p>
+        <p>People still want to feel valued, understood, respected, and important.</p>
+        <p>That's why Carnegie's principles continue to stand the test of time.</p>
+        <h2>Final Thoughts</h2>
+        <p>When I picked up this book, I was looking for ways to influence people without authority.</p>
+        <p>What I discovered was something much deeper.</p>
+        <p>True influence isn't about changing others. It's about changing how we communicate with them.</p>
+        <p>If you're a leader, manager, parent, entrepreneur, salesperson, or anyone who works with people—which is all of us—I highly recommend reading this book.</p>
+        <p><strong>My Rating: 4.8/5</strong></p>
+        <p>A timeless classic filled with practical wisdom that can improve both your professional and personal relationships.</p>
+        <p>If there's one takeaway I'd leave you with, it's this:</p>
+        <p><strong>People don't care how much you know until they know how much you care.</strong></p>
+      `
+    }
+  ]
 };

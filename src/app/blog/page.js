@@ -1,33 +1,5 @@
 import Link from "next/link";
-
-// Dummy data placeholder
-// TODO: Map to Sanity Studio fetch
-const mockArticles = [
-  {
-    slug: "system-design-for-startups",
-    title: "System Design Patterns for Early-Stage Startups",
-    date: "Oct 12, 2025",
-    track: "Product & System Architecture"
-  },
-  {
-    slug: "governance-at-scale",
-    title: "Navigating Governance When Scaling Past 100 Engineers",
-    date: "Aug 04, 2025",
-    track: "Scale & Governance"
-  },
-  {
-    slug: "empathy-in-engineering",
-    title: "Building Tools with Empathy: A PM's Guide",
-    date: "Jun 22, 2025",
-    track: "Human Systems & Empathy"
-  },
-  {
-    slug: "simulator-architecture",
-    title: "Architecting PM Simulators for Scalable Training",
-    date: "Mar 15, 2025",
-    track: "Product & System Architecture"
-  }
-];
+import { siteData } from "@/lib/data";
 
 export default function BlogIndex() {
   return (
@@ -40,7 +12,7 @@ export default function BlogIndex() {
       </div>
 
       <div className="flex flex-col">
-        {mockArticles.map((article) => (
+        {siteData.articles.map((article) => (
           <Link 
             key={article.slug} 
             href={`/blog/${article.slug}`}
