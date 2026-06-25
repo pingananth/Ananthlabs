@@ -27,14 +27,14 @@ export const siteData = {
       title: "Automated Agenda Engine",
       metric: "Reduces manual document formatting time by over 90%.",
       ctaText: "View Case Study",
-      ctaLink: "#", // Dummy URL configured later
+      ctaLink: "https://tmapps.netlify.app/",
     },
     {
       id: "meeting-minutes",
       title: "Meeting Minutes Utility",
       metric: "Active weekly utility for scaling cross-functional teams.",
       ctaText: "View App",
-      ctaLink: "#", // Dummy URL configured later
+      ctaLink: "https://toastmasters-meeting-3d8h.bolt.host/",
     },
     {
       id: "jsp-trading",
@@ -48,7 +48,7 @@ export const siteData = {
       title: "Break the Ice",
       metric: "Connecting professionals through structured networking.", // TODO: Map to Sanity Studio fetch
       ctaText: "View Live",
-      ctaLink: "https://divisioned229.org",
+      ctaLink: "http://divisioned229.org/breaktheice",
     },
     {
       id: "division-director",
@@ -63,6 +63,13 @@ export const siteData = {
       metric: "Summarizing complex academic research.", // TODO: Map to Sanity Studio fetch
       ctaText: "Read More",
       ctaLink: "https://myminipaper.com",
+    },
+    {
+      id: "parenting-simulator",
+      title: "Simul's Parenting Simulator",
+      metric: "Interactive AI simulation for modern parenting challenges.",
+      ctaText: "View Live",
+      ctaLink: "https://parenting.getsimul.com/",
     }
   ],
   visualLogs: [
