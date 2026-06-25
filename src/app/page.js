@@ -137,6 +137,63 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Featured Talks */}
+      <section id="talks" className="border-t border-[#333333] pt-24 scroll-mt-24">
+        <div className="mb-12">
+          <h2 className="text-3xl font-bold tracking-tight text-white">Featured Talks</h2>
+          <p className="text-[#a1a1aa] mt-2">Insights on product strategy, engineering, and leadership.</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Talk 1 */}
+          <div className="flex flex-col gap-3">
+            <div className="relative w-full aspect-video border border-[#333333] bg-[#0a0a0a] overflow-hidden shadow-2xl">
+              <iframe 
+                src="https://www.youtube.com/embed/x6he4ADVZWg" 
+                title="Talk 1"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+              ></iframe>
+            </div>
+            <h3 className="font-bold text-white text-lg leading-tight mt-2">Surrounded By Idiots - Management Book Review</h3>
+            <p className="text-xs font-mono text-[#a1a1aa] uppercase tracking-widest">Talk / Presentation</p>
+          </div>
+
+          {/* Talk 2 */}
+          <div className="flex flex-col gap-3">
+            <div className="relative w-full aspect-video border border-[#333333] bg-[#0a0a0a] overflow-hidden shadow-2xl">
+              <iframe 
+                src="https://www.youtube.com/embed/rkw5FgxK59M" 
+                title="Talk 2"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+              ></iframe>
+            </div>
+            <h3 className="font-bold text-white text-lg leading-tight mt-2">Demo Day Presentation of our AI Product</h3>
+            <p className="text-xs font-mono text-[#a1a1aa] uppercase tracking-widest">Product Demo</p>
+          </div>
+
+          {/* Talk 3 */}
+          <div className="flex flex-col gap-3">
+            <div className="relative w-full aspect-video border border-[#333333] bg-[#0a0a0a] overflow-hidden shadow-2xl">
+              <iframe 
+                src="https://www.youtube.com/embed/d1AvH_fwbhI" 
+                title="Talk 3"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+              ></iframe>
+            </div>
+            <h3 className="font-bold text-white text-lg leading-tight mt-2">Test Speaker for Meraki Advanced Toastmaster's Club Contest</h3>
+            <p className="text-xs font-mono text-[#a1a1aa] uppercase tracking-widest">Toastmasters</p>
+          </div>
+        </div>
+      </section>
+
       {/* Let's Partner Form */}
       <section id="partner" className="border-t border-[#333333] pt-24 pb-12 scroll-mt-24">
         <div className="max-w-2xl mx-auto text-center mb-12">
