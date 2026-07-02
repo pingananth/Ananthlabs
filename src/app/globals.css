@@ -10,6 +10,13 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter);
+  
+  --color-brand-50: #E6F2F7;
+  --color-brand-100: #CCE5EF;
+  --color-brand-500: #004165;
+  --color-brand-600: #003452;
+  --color-brand-700: #00273F;
+  --color-brand-900: #001A2C;
 }
 
 body {
@@ -24,4 +31,45 @@ body {
 *:focus-visible {
   outline: 1px solid #ededed;
   outline-offset: 2px;
+}
+
+/* Custom scrollbar for the TM tool preview pane */
+.preview-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.preview-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.preview-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 65, 101, 0.3);
+  border-radius: 20px;
+}
+.preview-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 65, 101, 0.5);
+}
+
+/* Safe area support for iOS devices with notches */
+.safe-area-pb {
+  padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+}
+.safe-area-pt {
+  padding-top: max(0.5rem, env(safe-area-inset-top));
+}
+
+/* Mobile-specific touch improvements */
+@media (max-width: 767px) {
+  input,
+  select,
+  textarea,
+  button {
+    min-height: 44px;
+  }
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+  .overflow-y-auto {
+    -webkit-overflow-scrolling: touch;
+  }
 }
