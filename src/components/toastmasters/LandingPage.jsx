@@ -1,8 +1,15 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect } from 'react';
 import Link from 'next/link';
 import { FileText, Calendar, Users, BarChart3, Settings, Mic2, Gavel } from 'lucide-react';
+import { trackEvent } from '../../utils/analytics';
 
 export default function LandingPage() {
+  useEffect(() => {
+    trackEvent('tm_landing_page_viewed');
+  }, []);
+
   const tools = [
     {
       id: 'minutes-generator',
@@ -81,6 +88,7 @@ export default function LandingPage() {
             <CardWrapper
               key={tool.id}
               href={tool.href}
+              onClick={() => trackEvent('tm_tool_clicked', { tool_id: tool.id })}
               className={`
                 relative bg-white rounded-xl shadow-sm border-2 p-8 transition-all duration-300 block
                 ${tool.status === 'available' 

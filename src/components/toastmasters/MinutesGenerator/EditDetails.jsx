@@ -46,6 +46,11 @@ export default function EditDetails({ data, setData, onNext, onBack }) {
         setOpenSections(prev => ({ ...prev, [section]: !prev[section] }));
     };
 
+    const handleNextWithTracking = () => {
+        trackEvent('generate_minutes_clicked');
+        onNext();
+    };
+
     const handleChange = (section, field, value) => {
         setData(prev => ({
             ...prev,
@@ -417,7 +422,7 @@ export default function EditDetails({ data, setData, onNext, onBack }) {
                 <button onClick={onBack} className="px-6 py-3 text-slate-600 hover:bg-slate-100 rounded-xl flex items-center gap-2 font-medium transition-colors">
                     <ArrowLeft size={20} /> Back
                 </button>
-                <button onClick={onNext} className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold flex items-center gap-2 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5">
+                <button onClick={handleNextWithTracking} className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold flex items-center gap-2 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5">
                     Generate Minutes <ArrowRight size={20} />
                 </button>
             </div>

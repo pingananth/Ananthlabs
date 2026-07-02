@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ArrowLeft, Download, FileText, Copy, CheckCircle } from 'lucide-react';
 import jsPDF from 'jspdf';
 import { DEFAULT_TEMPLATE } from './UploadAgenda';
+import { trackEvent } from '../../../utils/analytics';
 
 const compileTemplate = (template, data) => {
     let result = template || DEFAULT_TEMPLATE;
@@ -133,17 +134,20 @@ export default function PreviewMinutes({ data, onBack }) {
     const [isCopied, setIsCopied] = useState(false);
 
     useEffect(() => {
+        trackEvent('tm_minutes_generated_viewed');
         const result = compileTemplate(data.template, data);
         setCompiledText(result);
     }, [data]);
 
     const handleCopy = () => {
+        trackEvent('tm_minutes_copied');
         navigator.clipboard.writeText(compiledText);
         setIsCopied(true);
         setTimeout(() => setIsCopied(false), 2000);
     };
 
     const handleDownloadTXT = () => {
+        trackEvent('tm_minutes_downloaded_md');
         const element = document.createElement("a");
         const file = new Blob([compiledText], { type: 'text/plain' });
         element.href = URL.createObjectURL(file);
@@ -153,6 +157,7 @@ export default function PreviewMinutes({ data, onBack }) {
     };
 
     const handleDownloadPDF = () => {
+        trackEvent('tm_minutes_downloaded_pdf');
         const pdf = new jsPDF();
         pdf.setFontSize(10);
         

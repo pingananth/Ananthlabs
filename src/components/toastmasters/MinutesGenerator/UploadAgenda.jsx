@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { Upload, FileText, ArrowRight, Loader2, AlertCircle, ChevronDown, ChevronUp } from 'lucide-react';
 import { useDropzone } from 'react-dropzone';
+import { trackEvent } from '../../../utils/analytics';
 
 export const DEFAULT_TEMPLATE = `**[CLUB_NAME]**
 **Meeting Minutes**
@@ -100,6 +101,7 @@ export default function UploadAgenda({ onNext, setMinutesData, minutesData }) {
     const [isTemplateOpen, setIsTemplateOpen] = useState(false);
 
     const processFile = async (file) => {
+        trackEvent('tm_agenda_upload_started', { file_type: file.type, file_size: file.size });
         setIsProcessing(true);
         setError(null);
 
@@ -144,8 +146,10 @@ export default function UploadAgenda({ onNext, setMinutesData, minutesData }) {
                 ...safeData
             }));
 
+            trackEvent('tm_agenda_upload_success');
             onNext();
         } catch (err) {
+            trackEvent('tm_agenda_upload_error', { error_message: err.message });
             setError(err.message || 'Failed to process file. Please try again or skip this step.');
             console.error(err);
         } finally {

@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import UploadAgenda from './UploadAgenda';
 import EditDetails from './EditDetails';
 import PreviewMinutes from './PreviewMinutes';
 import TopBar from '../TopBar';
+import { trackEvent } from '../../../utils/analytics';
 
 export default function MinutesGenerator({ onBackToHome }) {
+    useEffect(() => {
+        trackEvent('tm_tool_started', { tool_id: 'minutes-generator' });
+    }, []);
+
     const [step, setStep] = useState(1);
     const [minutesData, setMinutesData] = useState({
         meetingInfo: { clubName: '', date: '', number: '', theme: '', wordOfTheDay: '', location: '' },
