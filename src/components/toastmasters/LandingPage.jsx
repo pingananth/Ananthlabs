@@ -17,7 +17,7 @@ export default function LandingPage() {
       description: 'Upload your agenda and generate professional meeting minutes with AI assistance',
       icon: <FileText className="w-8 h-8" />,
       status: 'available',
-      href: '/toastmasters/tools/minutesgenerator'
+      href: 'https://ananthlabs.com/toastmasters/tools/minutesgenerator'
     },
     {
       id: 'agenda-creator',
@@ -25,7 +25,7 @@ export default function LandingPage() {
       description: 'Create professional meeting agendas with templates and role assignments',
       icon: <Calendar className="w-8 h-8" />,
       status: 'available',
-      href: '/toastmasters/tools/agendacreator'
+      href: 'https://ananthlabs.com/toastmasters/tools/agendacreator'
     },
     {
       id: 'PR-tracker',
