@@ -11,6 +11,22 @@ async function getArticle(slug) {
   return article;
 }
 
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const article = await getArticle(slug);
+  
+  if (!article) return {};
+  
+  // Extract a brief description from the content by removing HTML tags
+  const plainText = article.content.replace(/<[^>]+>/g, '').trim();
+  const description = plainText.length > 150 ? plainText.substring(0, 150) + '...' : plainText;
+
+  return {
+    title: `${article.title} | Ananth Labs`,
+    description: description,
+  };
+}
+
 export default async function ArticlePage({ params }) {
   const { slug } = await params;
   const article = await getArticle(slug);

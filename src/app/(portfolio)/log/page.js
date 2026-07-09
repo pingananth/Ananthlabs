@@ -4,7 +4,9 @@ import { useState } from "react";
 import { siteData } from "@/lib/data";
 import Image from "next/image";
 
-export default function VisualLog() {
+
+
+export default function LogPage() {
   const [filter, setFilter] = useState("All");
 
   const filters = ["All", "Leading", "Exploring", "Building"];

@@ -1,6 +1,11 @@
 import Link from "next/link";
 import { siteData } from "@/lib/data";
 
+export const metadata = {
+  title: "Blog | Ananth Labs",
+  description: "Essays and technical teardowns on architecture, scaling, and the human side of software.",
+};
+
 export default function BlogIndex() {
   return (
     <div className="flex flex-col gap-16 max-w-3xl mx-auto">
