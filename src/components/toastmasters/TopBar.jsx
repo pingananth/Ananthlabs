@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from 'react';
 import { Settings, Download, Share2, LayoutTemplate, ChevronDown, FileText, Image, Home, MessageCircle } from 'lucide-react';
 

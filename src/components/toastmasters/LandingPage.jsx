@@ -17,7 +17,7 @@ export default function LandingPage() {
       description: 'Upload your agenda and generate professional meeting minutes with AI assistance',
       icon: <FileText className="w-8 h-8" />,
       status: 'available',
-      href: 'https://ananthlabs.com/toastmasters/tools/minutesgenerator'
+      href: '/toastmasters/tools/minutesgenerator'
     },
     {
       id: 'agenda-creator',
@@ -25,14 +25,15 @@ export default function LandingPage() {
       description: 'Create professional meeting agendas with templates and role assignments',
       icon: <Calendar className="w-8 h-8" />,
       status: 'available',
-      href: 'https://ananthlabs.com/toastmasters/tools/agendacreator'
+      href: '/toastmasters/tools/agendacreator'
     },
     {
-      id: 'PR-tracker',
-      title: 'PR Creator',
-      description: 'Create PR flyers adhering to TI guidelines in a jiffy',
+      id: 'brand-compliance',
+      title: 'Brand Compliance Checker',
+      description: 'Check flyers and PR materials against TI brand guidelines instantly',
       icon: <Users className="w-8 h-8" />,
-      status: 'coming-soon'
+      status: 'available',
+      href: '/toastmasters/tools/brandcompliance'
     },
     {
       id: 'virtual-chief-judge',

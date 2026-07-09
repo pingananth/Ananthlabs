@@ -137,8 +137,57 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section id="testimonials" className="border-t border-[#333333] pt-24 scroll-mt-24">
+        <div className="mb-12">
+          <h2 className="text-3xl font-bold tracking-tight text-white">Feedback & Testimonials</h2>
+          <p className="text-[#a1a1aa] mt-2">What clients and workshop attendees have to say.</p>
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="border border-[#333333] bg-[#0a0a0a] p-8 flex flex-col gap-6 hover:border-gray-500 transition-colors">
+            <p className="text-[#a1a1aa] italic leading-relaxed flex-1">
+              "Our website was brought to life by Anantha, whose creativity and dedication helped shape JSP's online presence. From understanding our ideas to turning them into a clean, modern, and easy-to-use website, he paid attention to every detail throughout the process. His commitment to quality and user experience has given us a platform that truly represents who we are and what we stand for. We sincerely appreciate his hard work and valuable contribution to JSP's digital journey."
+            </p>
+            <div>
+              <p className="text-white font-bold">Ashwin Prasad</p>
+              <p className="text-sm font-mono text-[#777777] mt-1">Director, JSP Trading & Solutions Private Limited</p>
+            </div>
+          </div>
+
+          <div className="border border-[#333333] bg-[#0a0a0a] p-8 flex flex-col gap-6 hover:border-gray-500 transition-colors">
+            <p className="text-[#a1a1aa] italic leading-relaxed flex-1 text-sm">
+              "I am extremely pleased with the website developed by Mr. Ananth Subramaniam for JSP Trading & Solutions Private Limited. From understanding our business requirements to delivering a modern, professional, and user-friendly website, Ananth demonstrated exceptional dedication, creativity, and technical expertise throughout the project. He was highly responsive to our feedback, paid close attention to every detail, and ensured that the final website truly reflected our company's vision and international standards. His commitment to quality and timely delivery made the entire experience smooth and enjoyable. I sincerely appreciate his hard work and professionalism. I highly recommend Ananth to anyone looking for a reliable and talented web developer. I wish him continued success and all the very best in his future endeavors. May he achieve even greater milestones in his career."
+            </p>
+            <div>
+              <p className="text-white font-bold">Prasanna Vijayakumar</p>
+              <p className="text-sm font-mono text-[#777777] mt-1">Director, JSP Trading & Solutions Private Limited</p>
+            </div>
+          </div>
+
+          <div className="border border-[#333333] bg-[#0a0a0a] p-8 flex flex-col gap-6 hover:border-gray-500 transition-colors">
+            <p className="text-[#a1a1aa] italic leading-relaxed flex-1">
+              "Everything is perfect,you make the session for all who don't have any prior knowledge of how promoting needs to be done"
+            </p>
+            <div>
+              <p className="text-white font-bold">Anbu Kathiravan</p>
+              <p className="text-sm font-mono text-[#777777] mt-1">Attendee, Gen AI Workshop at SSN College of Engineering</p>
+            </div>
+          </div>
+
+          <div className="border border-[#333333] bg-[#0a0a0a] p-8 flex flex-col gap-6 hover:border-gray-500 transition-colors">
+            <p className="text-[#a1a1aa] italic leading-relaxed flex-1">
+              "This session is really good for beginners who doesn’t about the ai assists development."
+            </p>
+            <div>
+              <p className="text-white font-bold">Ajith Kumar A</p>
+              <p className="text-sm font-mono text-[#777777] mt-1">Attendee, Gen AI Workshop at SSN College of Engineering</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Featured Talks */}
-      <section id="talks" className="border-t border-[#333333] pt-24 scroll-mt-24">
+      <section id="talks" className="border-t border-[#333333] pt-24 mt-24 scroll-mt-24">
         <div className="mb-12">
           <h2 className="text-3xl font-bold tracking-tight text-white">Featured Talks</h2>
           <p className="text-[#a1a1aa] mt-2">Insights on product strategy, engineering, and leadership.</p>

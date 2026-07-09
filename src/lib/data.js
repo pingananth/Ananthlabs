@@ -27,14 +27,14 @@ export const siteData = {
       title: "Automated Agenda Engine",
       metric: "Reduces manual document formatting time by over 90%.",
       ctaText: "View Case Study",
-      ctaLink: "https://tmapps.netlify.app/",
+      ctaLink: "https://ananthlabs.com/toastmasters/tools/agendacreator",
     },
     {
       id: "meeting-minutes",
       title: "Meeting Minutes Utility",
       metric: "Active weekly utility for scaling cross-functional teams.",
       ctaText: "View App",
-      ctaLink: "https://toastmasters-meeting-3d8h.bolt.host/",
+      ctaLink: "https://ananthlabs.com/toastmasters/tools/minutesgenerator",
     },
     {
       id: "jsp-trading",
