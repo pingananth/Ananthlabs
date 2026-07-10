@@ -73,29 +73,103 @@ export const siteData = {
     }
   ],
   visualLogs: [
-    { id: 1, type: "Leading", location: "Toastmasters Club", year: "2024", caption: "Humorous Speech Contest Winner.", heightClass: "h-96", imageUrl: "/visuallog/ananth-humorouswinner-clubcontest-2024.jpg" },
-    { id: 2, type: "Exploring", location: "Toastmasters", year: "2024", caption: "With the 2nd Place World Champion of Public Speaking.", heightClass: "h-72", imageUrl: "/visuallog/with-2ndplace-worldchampionofpublicspeaking.jpg" },
-    { id: 3, type: "Building", location: "SSN College", year: "2024", caption: "Conducting a GenAI Workshop.", heightClass: "h-64", imageUrl: "/visuallog/genai-workshop-ssn.jpg" },
-    { id: 4, type: "Leading", location: "Toastmasters", year: "2025", caption: "Connecting with the 2025 World Champion of Public Speaking.", heightClass: "h-96", imageUrl: "/visuallog/with-worldchampionofpublicspeaking2025.jpg" },
-    { id: 5, type: "Building", location: "SSN College", year: "2024", caption: "GenAI Workshop Insights.", heightClass: "h-80", imageUrl: "/visuallog/genai-workshop-ssn-2.jpg" },
-    { id: 6, type: "Leading", location: "Event", year: "2024", caption: "Contest educational session.", heightClass: "h-72", imageUrl: "/visuallog/Contest-educational-session.jpg" },
-    { id: 7, type: "Exploring", location: "Elagiri", year: "2024", caption: "DOTP Day 1 Term 2.", heightClass: "h-64", imageUrl: "/visuallog/DOTP-Day1-Term2-Elagiri.jpg" },
-    { id: 8, type: "Leading", location: "CPCL", year: "2024", caption: "Demo meeting CPCL.", heightClass: "h-96", imageUrl: "/visuallog/Demo-meeting-cpcl.jpg" },
-    { id: 9, type: "Leading", location: "Workshop", year: "2024", caption: "District Officers Training Program Day 2.", heightClass: "h-80", imageUrl: "/visuallog/DistrictOfficersTrainingProgram-Day 2-Workshop.JPG" },
-    { id: 10, type: "Leading", location: "Workshop", year: "2024", caption: "District Officers Training Group Picture.", heightClass: "h-72", imageUrl: "/visuallog/DistrictOfficersTrainingProgram-Day2-GroupPicture.JPG" },
-    { id: 11, type: "Exploring", location: "Division E", year: "2024", caption: "Division E Conf BTS.", heightClass: "h-64", imageUrl: "/visuallog/DivisionEConf-bts.jpg" },
-    { id: 12, type: "Leading", location: "Conference", year: "2026", caption: "Division E Conference Apr 2026 Recognition.", heightClass: "h-96", imageUrl: "/visuallog/DivisionEconference-Apr2026-Recognition-AD.JPG" },
-    { id: 13, type: "Leading", location: "Training", year: "2024", caption: "Officers Training Program VPE 2024.", heightClass: "h-80", imageUrl: "/visuallog/OfficersTraining Program-VPE-2024.jpg" },
-    { id: 14, type: "Leading", location: "Training", year: "2025", caption: "Officers Training Program July 2025.", heightClass: "h-72", imageUrl: "/visuallog/OfficersTrainingProgram-July 2025-AD.jpg" },
-    { id: 15, type: "Exploring", location: "Nanganallur", year: "2024", caption: "WalkieTalkie Nanganallur 250 Milestone.", heightClass: "h-64", imageUrl: "/visuallog/WalkieTalkie Nanganallur-250Milestone.jpg" },
-    { id: 16, type: "Exploring", location: "Nanganallur", year: "2024", caption: "WalkieTalkie Nanganallur 275 Milestone.", heightClass: "h-96", imageUrl: "/visuallog/WalkieTalkie Nanganallur-275 Milestone.jpg" },
-    { id: 17, type: "Building", location: "HSBC", year: "2024", caption: "Ananth CJ HSBC.", heightClass: "h-80", imageUrl: "/visuallog/ananth-cj-hsbc.jpg" },
-    { id: 18, type: "Leading", location: "Event", year: "2024", caption: "Best Table Topics Speaker.", heightClass: "h-72", imageUrl: "/visuallog/best-table-topics-speaker.jpg" },
-    { id: 19, type: "Building", location: "Alwarpet", year: "2024", caption: "Panelists panel discussion Alwarpet.", heightClass: "h-64", imageUrl: "/visuallog/panelists-paneldiscussion-alwarpet.jpg" },
-    { id: 20, type: "Exploring", location: "General", year: "2024", caption: "General Capture.", heightClass: "h-96", imageUrl: "/visuallog/IMG-20240915-WA0000.jpg" }
+    { id: 1, type: "Leading", location: "Toastmasters Club", year: "Sep 2024", caption: "Humorous Speech Contest Winner.", heightClass: "h-96", imageUrl: "/visuallog/ananth-humorouswinner-clubcontest-2024.jpg" },
+    { id: 2, type: "Exploring", location: "Toastmasters", year: "April 2025", caption: "With the 2nd Place World Champion of Public Speaking.", heightClass: "h-72", imageUrl: "/visuallog/with-2ndplace-worldchampionofpublicspeaking.jpg" },
+    { id: 3, type: "Building", location: "SSN College", year: "November 2025", caption: "Conducting a GenAI Workshop.", heightClass: "h-64", imageUrl: "/visuallog/genai-workshop-ssn.jpg" },
+    { id: 4, type: "Leading", location: "Toastmasters", year: "April 2025", caption: "Connecting with the 2025 World Champion of Public Speaking.", heightClass: "h-96", imageUrl: "/visuallog/with-worldchampionofpublicspeaking2025.jpg" },
+    { id: 5, type: "Building", location: "SSN College", year: "2025", caption: "GenAI Workshop Insights.", heightClass: "h-80", imageUrl: "/visuallog/genai-workshop-ssn-2.jpg" },
+    { id: 6, type: "Leading", location: "Event", year: "Feb 2026", caption: "Contest educational session.", heightClass: "h-72", imageUrl: "/visuallog/Contest-educational-session.jpg" },
+    { id: 7, type: "Exploring", location: "Elagiri", year: "Jan 2026", caption: "DOTP Day 1 Term 2.", heightClass: "h-64", imageUrl: "/visuallog/DOTP-Day1-Term2-Elagiri.jpg" },
+    { id: 8, type: "Leading", location: "CPCL", year: "Aug 2025", caption: "Demo meeting CPCL.", heightClass: "h-96", imageUrl: "/visuallog/Demo-meeting-cpcl.jpg" },
+    { id: 9, type: "Leading", location: "Workshop", year: "July 2025", caption: "District Officers Training Program Day 2.", heightClass: "h-80", imageUrl: "/visuallog/DistrictOfficersTrainingProgram-Day 2-Workshop.JPG" },
+    { id: 10, type: "Leading", location: "Workshop", year: "July 2025", caption: "District Officers Training Group Picture.", heightClass: "h-72", imageUrl: "/visuallog/DistrictOfficersTrainingProgram-Day2-GroupPicture.JPG" },
+    { id: 11, type: "Exploring", location: "Division E", year: "Feb 2026", caption: "Division E Conf BTS.", heightClass: "h-64", imageUrl: "/visuallog/DivisionEConf-bts.jpg" },
+    { id: 12, type: "Leading", location: "Conference", year: "Feb 2026", caption: "Division E Conference Apr 2026 Recognition.", heightClass: "h-96", imageUrl: "/visuallog/DivisionEconference-Apr2026-Recognition-AD.JPG" },
+    { id: 13, type: "Leading", location: "Training", year: "July 2024", caption: "Officers Training Program VPE 2024.", heightClass: "h-80", imageUrl: "/visuallog/OfficersTraining Program-VPE-2024.jpg" },
+    { id: 14, type: "Leading", location: "Training", year: "July 2025", caption: "Officers Training Program July 2025.", heightClass: "h-72", imageUrl: "/visuallog/OfficersTrainingProgram-July 2025-AD.jpg" },
+    { id: 15, type: "Exploring", location: "Nanganallur", year: "Aug 2023", caption: "WalkieTalkie Nanganallur 250 Milestone.", heightClass: "h-64", imageUrl: "/visuallog/WalkieTalkie Nanganallur-250Milestone.jpg" },
+    { id: 16, type: "Exploring", location: "Nanganallur", year: "Dec 2023", caption: "WalkieTalkie Nanganallur 275 Milestone.", heightClass: "h-96", imageUrl: "/visuallog/WalkieTalkie Nanganallur-275 Milestone.jpg" },
+    { id: 17, type: "Building", location: "HSBC", year: "2025", caption: "Ananth CJ HSBC.", heightClass: "h-80", imageUrl: "/visuallog/ananth-cj-hsbc.jpg" },
+    { id: 18, type: "Leading", location: "Event", year: "May 2026", caption: "Best Table Topics Speaker.", heightClass: "h-72", imageUrl: "/visuallog/best-table-topics-speaker.jpg" },
+    { id: 19, type: "Building", location: "Alwarpet", year: "Mar 2026", caption: "Panelists panel discussion Alwarpet.", heightClass: "h-64", imageUrl: "/visuallog/panelists-paneldiscussion-alwarpet.jpg" },
+    { id: 21, type: "Leading", location: "Toastmasters", year: "July 2026", caption: "Area Director Installation.", heightClass: "h-72", imageUrl: "/visuallog/AD Installation.jpeg" },
+    { id: 22, type: "Exploring", location: "Yelagiri", year: "Jan 2026", caption: "DOTP Day 2 Yelagiri.", heightClass: "h-80", imageUrl: "/visuallog/DOTP-Day2-Yelagiri.jpg" },
+    { id: 23, type: "Leading", location: "Division E", year: "June 2026", caption: "Vision & Strategy Display.", heightClass: "h-64", imageUrl: "/visuallog/DivE-Vision&Strategy-Display.JPG" },
+    { id: 24, type: "Leading", location: "Toastmasters", year: "July 2026", caption: "Division Director Address OTP July 2026.", heightClass: "h-96", imageUrl: "/visuallog/DivisionDirector-Address-OTP-July2026.jpeg" },
+    { id: 25, type: "Leading", location: "Division E", year: "June 2026", caption: "Introducing Division E Area Directors.", heightClass: "h-80", imageUrl: "/visuallog/IntroducingDivEAD.JPG" },
+    { id: 26, type: "Building", location: "Toastmasters", year: "Oct 2024", caption: "Test Speaker Area Contest.", heightClass: "h-72", imageUrl: "/visuallog/testspeaker-areacontest.jpg" }
   ],
   resumePdfUrl: "/cv.pdf",
   articles: [
+    {
+      slug: "product-strategy-proposal-simulating-anthropic-enterprise-pivot",
+      title: "Product Strategy Proposal: How We Modeled Anthropic's Enterprise Playbook 18 Months in Advance",
+      date: "Jul 10, 2026",
+      track: "Product Strategy",
+      content: `
+        <p>If you want to build real product sense, you have to escape tutorial hell.</p>
+        <p>After 14 years of building products and recently transitioning to full-time solopreneurship, my philosophy has always centered on Applied Practice. You don't learn strategy by reading another framework; you learn it by placing a bet, documenting it, and letting the unforgiving market grade your paper.</p>
+        <p>In November 2024, nearly two years ago, I put this into practice during the Product Sense & Strategy course by [PM Curve]. The capstone was a grueling two-phase simulation. Phase 1 was a solo elimination round where we had to pitch a strategic product initiative. Those shortlisted moved to Phase 2, joining a team to build a comprehensive Go-To-Market and product strategy presentation.</p>
+        <p>We had a few products to pick from for our capstone—Spotify, Anthropic, and a few others. I picked Anthropic.</p>
+        <p>At the time, the entire landscape of major LLM players was obsessively focused on B2C chat interfaces. But I hypothesized a different path for Anthropic based on their unique safety positioning, the broader market sentiment around AI, and the glaring gap between early consumer adoption and absolute enterprise hesitation.</p>
+        <p>My Phase 1 pitch got me shortlisted, and I teamed up with a brilliant group of PMs—Pushkar, Ankit, Krishna, and Praharshitha—for Phase 2. We ended up winning the capstone. (<a href="https://www.linkedin.com/posts/ananthasubramaniamr_productmanagement-personaldevelopment-productstrategy-activity-7266810595968999425-lItA?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC6FiOcBQcSxOq7fvFPQ_-ET_W40MUqwcj8" target="_blank" rel="noopener noreferrer">You can see the timestamped receipt of our win in my original LinkedIn post here</a>).</p>
+        <p>Now that it’s July 2026, I wanted to pull these artifacts back out and grade our scorecard against what Anthropic actually shipped.</p>
+
+        <h2>Phase 1: The Hypothesis (AI Safety & Compliance)</h2>
+        <p>My solo pitch focused on an "AI Safety Toolkit." The premise was simple: enterprises will not adopt LLMs at scale if they fear data leakage, compliance breaches, or autonomous hallucinations. I proposed Prompt Shields (injection detection), Adversarial Testing, and a rigorous Compliance Framework.</p>
+        <p><a href="/pdf/AI Safety toolkit_Phase 1.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-[#111111] border border-[#333333] px-4 py-3 text-white font-medium hover:bg-[#222222] transition-colors rounded-md mt-2">
+          📄 Read the Phase 1 Proposal (Opens in new tab)
+        </a></p>
+
+        <h2>Phase 2: The Execution & GTM (Claude Studio)</h2>
+        <p>For the final group presentation, we translated that safety moat into a tangible product ecosystem: Claude Studio. We pitched an enterprise hub focused on solving sub-problems impacting productivity, like integration and workflow disruption. Our core bets included:</p>
+        <ul>
+          <li><strong>Automated Workflows via Computer Use:</strong> Delegating repeated work to computer agents.</li>
+          <li><strong>Role Groups:</strong> Granular access controls mapping to company hierarchies.</li>
+          <li><strong>Knowledge Integration:</strong> Connecting Claude directly to Confluence, Notion, and Slack securely.</li>
+        </ul>
+        <p><a href="/pdf/PSS-2_Capstone_Claude.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-[#111111] border border-[#333333] px-4 py-3 text-white font-medium hover:bg-[#222222] transition-colors rounded-md mt-2">
+          📄 Read the Phase 2 Presentation (Opens in new tab)
+        </a></p>
+
+        <h2>The 18-Month Scorecard: Hits and Misses</h2>
+        <p>Looking at Anthropic today, treating this capstone as a live strategic simulator paid off. Here is how our bets panned out:</p>
+
+        <p>✅ <strong>HIT: Enterprise Productivity & Workflow Adoption</strong><br />
+        We called out that complex enterprise systems require seamless AI integration, and built our pitch around unlocking productivity. Today, those exact tenets of enterprise workflow adoption are the foundation of the recently released Claude Co-work ecosystem.</p>
+
+        <p>✅ <strong>HIT: Computer Use & Autonomous Agents</strong><br />
+        In late 2024, Anthropic had just launched their rudimentary computer use capabilities. We rightly doubled down on it, pitching "Computer use for Automated workflows" to delegate repetitive tasks. Today, that bet on autonomous activity is exactly what Claude Code has become—a massive engine operating independently in the developer and browser environments.</p>
+
+        <p>✅ <strong>HIT: Professional Services</strong><br />
+        On our business model slide, we explicitly mapped out "Professional services" as a revenue stream to support Claude Enterprise solutions. Fast forward to today, and the "Forward Deployed Engineer" (FDE) is one of the hottest, most critical roles in the AI space, proving that enterprise AI requires hands-on integration services.</p>
+
+        <p>✅ <strong>HIT: The Compliance Moat</strong><br />
+        We pitched a standalone AI Safety Toolkit. Anthropic took it a step further and embedded those exact concepts natively. With their compliance API integrations and governed data partnerships, they brought the models directly to sensitive enterprise data without moving it.</p>
+
+        <p>❌ <strong>THE MISS: Our Financial Projections</strong><br />
+        Slide 2 of our deck projected an optimistic 2026 valuation for Anthropic of $40 Billion with a revenue run rate of $1 Billion.<br />
+        The reality? As of May 2026, Anthropic's revenue hit an astonishing $47 Billion. I am going to go ahead and blame my conservative Indian upbringing for that hilariously safe financial estimate. We nailed the product roadmap, but the sheer velocity of the AI market broke every standard SaaS financial model.</p>
+
+        <h2>The Takeaway for Product Managers</h2>
+        <p>If you want to hone your strategic skills, stop just reading theory. Pick a product. Write a strategy. Publish it. Then, come back a year or two later and see how the market humbled or validated you.</p>
+
+        <p>Want more product teardowns and applied practice frameworks?<br />
+        Drop your email below, and I’ll send my latest essays and simulator updates straight to your inbox.</p>
+
+        <div class="my-8 p-6 bg-[#111111] border border-[#333333] rounded-lg text-center">
+          <h3 class="text-xl font-bold text-white mb-2">Subscribe to my Newsletter</h3>
+          <p class="text-[#a1a1aa] mb-4">Get the latest product teardowns and frameworks delivered to your inbox.</p>
+          <form onsubmit="event.preventDefault(); alert('Thanks for subscribing. This is a placeholder until the backend is connected.');" class="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
+            <input type="email" placeholder="Your email address" required class="flex-1 bg-[#0a0a0a] border border-[#333333] p-3 text-white focus:outline-none focus:border-white transition-colors" />
+            <button type="submit" class="bg-white text-black font-bold px-6 py-3 hover:bg-gray-200 transition-colors">Subscribe</button>
+          </form>
+        </div>
+
+        <h2>Work with me:</h2>
+        <p>I am currently taking on select consulting projects for founders and offering 1:1 mentoring for aspiring/mid-level PMs looking to bring rigorous, applied strategy to their careers. <a href="https://calendly.com/pingananth/30min?month=2026-07" target="_blank" rel="noopener noreferrer">Click here to book a chat</a>.</p>
+      `
+    },
     {
       slug: "book-review-how-to-win-friends-and-influence-people",
       title: "Book Review: How to Win Friends & Influence People – Lessons That Changed My Life",
