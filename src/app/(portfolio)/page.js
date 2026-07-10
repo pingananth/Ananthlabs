@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { siteData } from "@/lib/data";
-import { sendGAEvent } from "@next/third-parties/google";
+import { trackEvent } from "@/utils/analytics";
 
 export default function Home() {
   return (
@@ -19,11 +19,11 @@ export default function Home() {
           14 years of cross-functional leadership bridging engineering with data-driven product management. I build functional tools and scalable simulators designed to solve complex operational friction.
         </p>
         <div className="flex flex-wrap items-center gap-4 mt-4">
-          <a href="#portfolio" onClick={() => sendGAEvent({ event: 'click_view_portfolio', value: 'hero' })} className="bg-white text-black px-6 py-3 font-semibold hover:bg-gray-200 transition-colors">
+          <a href="#portfolio" onClick={() => trackEvent('click_view_portfolio', { location: 'hero' })} className="bg-white text-black px-6 py-3 font-semibold hover:bg-gray-200 transition-colors">
             [ View Portfolio ]
           </a>
-          <a href="#partner" onClick={() => sendGAEvent({ event: 'click_partner', value: 'hero' })} className="border border-[#333333] px-6 py-3 font-semibold hover:bg-[#111111] hover:border-gray-400 transition-colors text-white">
-            [ Let's Partner ]
+          <a href="#partner" onClick={() => trackEvent('click_partner', { location: 'hero' })} className="border border-[#333333] px-6 py-3 font-semibold hover:bg-[#111111] hover:border-gray-400 transition-colors text-white">
+            [ Let's Talk ]
           </a>
         </div>
       </section>
@@ -254,7 +254,7 @@ export default function Home() {
         
         <form className="max-w-2xl mx-auto space-y-6" onSubmit={async (e) => {
           e.preventDefault();
-          sendGAEvent({ event: 'form_submit', value: 'inbound_pipeline' });
+          trackEvent('form_submit', { form_name: 'inbound_pipeline' });
           const btn = e.target.querySelector('button[type="submit"]');
           const originalText = btn.innerText;
           btn.innerText = 'Sending...';

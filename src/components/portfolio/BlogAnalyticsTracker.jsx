@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { sendGAEvent } from "@next/third-parties/google";
+import { trackEvent } from "@/utils/analytics";
 
 export default function BlogAnalyticsTracker({ articleId }) {
   useEffect(() => {
@@ -11,10 +11,10 @@ export default function BlogAnalyticsTracker({ articleId }) {
       if (link) {
         // Special case for calendly booking link
         if (link.href.includes("calendly.com")) {
-          sendGAEvent({ event: "click_book_call", value: articleId });
+          trackEvent("click_book_call", { article_id: articleId });
         } else {
           // Generic link click in blog
-          sendGAEvent({ event: "blog_link_click", value: link.href });
+          trackEvent("blog_link_click", { url: link.href });
         }
       }
     };

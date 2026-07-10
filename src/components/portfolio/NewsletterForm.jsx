@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { sendGAEvent } from "@next/third-parties/google";
+import { trackEvent } from "@/utils/analytics";
 
 export default function NewsletterForm() {
   const [status, setStatus] = useState("idle");
@@ -9,7 +9,7 @@ export default function NewsletterForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("loading");
-    sendGAEvent({ event: "form_submit", value: "newsletter_subscribe" });
+    trackEvent("form_submit", { form_name: "newsletter_subscribe" });
 
     try {
       const res = await fetch("/api/contact", {
