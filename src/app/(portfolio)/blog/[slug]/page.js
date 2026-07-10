@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { siteData } from "@/lib/data";
 import { notFound } from "next/navigation";
+import NewsletterForm from "@/components/portfolio/NewsletterForm";
+import BlogAnalyticsTracker from "@/components/portfolio/BlogAnalyticsTracker";
 
 // Fetch article from siteData
-async function getArticle(slug) {
+function getArticle(slug) {
   const article = siteData.articles.find(a => a.slug === slug);
   if (!article) {
     notFound();
@@ -13,7 +15,7 @@ async function getArticle(slug) {
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const article = await getArticle(slug);
+  const article = getArticle(slug);
   
   if (!article) return {};
   
@@ -29,10 +31,12 @@ export async function generateMetadata({ params }) {
 
 export default async function ArticlePage({ params }) {
   const { slug } = await params;
-  const article = await getArticle(slug);
+  const article = getArticle(slug);
 
   return (
     <article className="max-w-2xl mx-auto flex flex-col gap-8 pt-8 pb-24">
+      <BlogAnalyticsTracker articleId={slug} />
+      
       <Link href="/blog" className="text-sm font-mono text-[#a1a1aa] hover:text-white transition-colors flex items-center gap-2 w-fit">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
         Back to Writing
@@ -54,7 +58,11 @@ export default async function ArticlePage({ params }) {
         dangerouslySetInnerHTML={{ __html: article.content }}
       />
       
-      <footer className="mt-16 pt-8 border-t border-[#333333]">
+      <div className="mt-12">
+        <NewsletterForm />
+      </div>
+      
+      <footer className="mt-8 pt-8 border-t border-[#333333]">
         <p className="text-sm text-[#a1a1aa] font-mono">
           Written by Ananth
         </p>

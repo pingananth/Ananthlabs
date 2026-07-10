@@ -54,7 +54,7 @@ export default function LogPage() {
                 src={log.imageUrl} 
                 alt={log.caption} 
                 fill 
-                className="object-cover"
+                className={`object-cover ${log.imageClass || ""}`}
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
             ) : (

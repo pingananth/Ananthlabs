@@ -252,30 +252,63 @@ export default function Home() {
           </p>
         </div>
         
-        <form className="max-w-2xl mx-auto space-y-6" onSubmit={(e) => {
+        <form className="max-w-2xl mx-auto space-y-6" onSubmit={async (e) => {
           e.preventDefault();
           sendGAEvent({ event: 'form_submit', value: 'inbound_pipeline' });
-          alert("Thanks for your inquiry. This is a placeholder.");
+          const btn = e.target.querySelector('button[type="submit"]');
+          const originalText = btn.innerText;
+          btn.innerText = 'Sending...';
+          btn.disabled = true;
+
+          try {
+            const formData = {
+              type: 'contact_inquiry',
+              name: e.target.name.value,
+              email: e.target.email.value,
+              organization: e.target.organization.value,
+              intent: e.target.intent.value,
+              message: e.target.message.value
+            };
+
+            const res = await fetch('/api/contact', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(formData)
+            });
+
+            if (res.ok) {
+              alert('Message sent successfully! I will get back to you soon.');
+              e.target.reset();
+            } else {
+              alert('Failed to send message. Please try again.');
+            }
+          } catch (error) {
+            console.error(error);
+            alert('An error occurred.');
+          } finally {
+            btn.innerText = originalText;
+            btn.disabled = false;
+          }
         }}>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div className="space-y-2">
               <label htmlFor="name" className="text-sm font-medium text-[#a1a1aa]">Full Name</label>
-              <input type="text" id="name" required className="w-full bg-[#0a0a0a] border border-[#333333] p-3 text-white focus:outline-none focus:border-white transition-colors" placeholder="Jane Doe" />
+              <input type="text" id="name" name="name" required className="w-full bg-[#0a0a0a] border border-[#333333] p-3 text-white focus:outline-none focus:border-white transition-colors" placeholder="Jane Doe" />
             </div>
             <div className="space-y-2">
               <label htmlFor="email" className="text-sm font-medium text-[#a1a1aa]">Email Address</label>
-              <input type="email" id="email" required className="w-full bg-[#0a0a0a] border border-[#333333] p-3 text-white focus:outline-none focus:border-white transition-colors" placeholder="jane@company.com" />
+              <input type="email" id="email" name="email" required className="w-full bg-[#0a0a0a] border border-[#333333] p-3 text-white focus:outline-none focus:border-white transition-colors" placeholder="jane@company.com" />
             </div>
           </div>
           
           <div className="space-y-2">
             <label htmlFor="organization" className="text-sm font-medium text-[#a1a1aa]">Organization</label>
-            <input type="text" id="organization" className="w-full bg-[#0a0a0a] border border-[#333333] p-3 text-white focus:outline-none focus:border-white transition-colors" placeholder="Company or Institution Name" />
+            <input type="text" id="organization" name="organization" className="w-full bg-[#0a0a0a] border border-[#333333] p-3 text-white focus:outline-none focus:border-white transition-colors" placeholder="Company or Institution Name" />
           </div>
 
           <div className="space-y-2">
             <label htmlFor="intent" className="text-sm font-medium text-[#a1a1aa]">Engagement Intent</label>
-            <select id="intent" className="w-full bg-[#0a0a0a] border border-[#333333] p-3 text-white focus:outline-none focus:border-white transition-colors appearance-none">
+            <select id="intent" name="intent" className="w-full bg-[#0a0a0a] border border-[#333333] p-3 text-white focus:outline-none focus:border-white transition-colors appearance-none">
               <option value="speaking">Speaking / Panel Discussion</option>
               <option value="workshop">Weekend Workshop</option>
               <option value="freelance">Freelance Consulting</option>
@@ -286,10 +319,10 @@ export default function Home() {
 
           <div className="space-y-2">
             <label htmlFor="message" className="text-sm font-medium text-[#a1a1aa]">Message</label>
-            <textarea id="message" required rows={5} className="w-full bg-[#0a0a0a] border border-[#333333] p-3 text-white focus:outline-none focus:border-white transition-colors resize-none" placeholder="Briefly describe the context of your inquiry..."></textarea>
+            <textarea id="message" name="message" required rows={5} className="w-full bg-[#0a0a0a] border border-[#333333] p-3 text-white focus:outline-none focus:border-white transition-colors resize-none" placeholder="Briefly describe the context of your inquiry..."></textarea>
           </div>
 
-          <button type="submit" className="w-full bg-white text-black font-bold py-4 hover:bg-gray-200 transition-colors">
+          <button type="submit" className="w-full bg-white text-black font-bold py-4 hover:bg-gray-200 transition-colors disabled:opacity-50">
             [ Submit Inquiry ]
           </button>
         </form>

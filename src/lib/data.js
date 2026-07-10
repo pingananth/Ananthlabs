@@ -96,13 +96,13 @@ export const siteData = {
     { id: 22, type: "Exploring", location: "Yelagiri", year: "Jan 2026", caption: "DOTP Day 2 Yelagiri.", heightClass: "h-80", imageUrl: "/visuallog/DOTP-Day2-Yelagiri.jpg" },
     { id: 23, type: "Leading", location: "Division E", year: "June 2026", caption: "Vision & Strategy Display.", heightClass: "h-64", imageUrl: "/visuallog/DivE-Vision&Strategy-Display.JPG" },
     { id: 24, type: "Leading", location: "Toastmasters", year: "July 2026", caption: "Division Director Address OTP July 2026.", heightClass: "h-96", imageUrl: "/visuallog/DivisionDirector-Address-OTP-July2026.jpeg" },
-    { id: 25, type: "Leading", location: "Division E", year: "June 2026", caption: "Introducing Division E Area Directors.", heightClass: "h-80", imageUrl: "/visuallog/IntroducingDivEAD.JPG" },
+    { id: 25, type: "Leading", location: "Division E", year: "2026", caption: "Introducing Division E Area Directors.", heightClass: "h-80", imageClass: "object-top", imageUrl: "/visuallog/IntroducingDivEAD.JPG" },
     { id: 26, type: "Building", location: "Toastmasters", year: "Oct 2024", caption: "Test Speaker Area Contest.", heightClass: "h-72", imageUrl: "/visuallog/testspeaker-areacontest.jpg" }
   ],
   resumePdfUrl: "/cv.pdf",
   articles: [
     {
-      slug: "product-strategy-proposal-simulating-anthropic-enterprise-pivot",
+      slug: "product-strategy-proposal-modeling-anthropic-enterprise-playbook",
       title: "Product Strategy Proposal: How We Modeled Anthropic's Enterprise Playbook 18 Months in Advance",
       date: "Jul 10, 2026",
       track: "Product Strategy",
@@ -157,14 +157,7 @@ export const siteData = {
         <p>Want more product teardowns and applied practice frameworks?<br />
         Drop your email below, and I’ll send my latest essays and simulator updates straight to your inbox.</p>
 
-        <div class="my-8 p-6 bg-[#111111] border border-[#333333] rounded-lg text-center">
-          <h3 class="text-xl font-bold text-white mb-2">Subscribe to my Newsletter</h3>
-          <p class="text-[#a1a1aa] mb-4">Get the latest product teardowns and frameworks delivered to your inbox.</p>
-          <form onsubmit="event.preventDefault(); alert('Thanks for subscribing. This is a placeholder until the backend is connected.');" class="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
-            <input type="email" placeholder="Your email address" required class="flex-1 bg-[#0a0a0a] border border-[#333333] p-3 text-white focus:outline-none focus:border-white transition-colors" />
-            <button type="submit" class="bg-white text-black font-bold px-6 py-3 hover:bg-gray-200 transition-colors">Subscribe</button>
-          </form>
-        </div>
+
 
         <h2>Work with me:</h2>
         <p>I am currently taking on select consulting projects for founders and offering 1:1 mentoring for aspiring/mid-level PMs looking to bring rigorous, applied strategy to their careers. <a href="https://calendly.com/pingananth/30min?month=2026-07" target="_blank" rel="noopener noreferrer">Click here to book a chat</a>.</p>
