@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, Plus, Trash2, ArrowRight, ArrowLeft } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { trackEvent } from '../../../utils/analytics';
 
 const Section = ({ title, isOpen, onToggle, children }) => (
     <div className="border border-slate-200 rounded-xl mb-4 overflow-hidden bg-white shadow-sm">

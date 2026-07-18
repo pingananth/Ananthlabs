@@ -231,7 +231,9 @@ export default function UnifiedBrandChecker() {
       let bestScore = -1;
       let bestMatch = null;
       
-      for (let scale = 0.1; scale <= 3.0; scale += 0.05) {
+      const maxScale = Math.min(15.0, Math.max(3.0, src.cols / templ.cols));
+      
+      for (let scale = 0.1; scale <= maxScale; scale += 0.05) {
          let currentWidth = Math.round(templ.cols * scale);
          let currentHeight = Math.round(templ.rows * scale);
          
@@ -269,15 +271,15 @@ export default function UnifiedBrandChecker() {
         let trueH = bestMatch.height;
 
         if (shape === 'wordmark') {
-           trueX = bestMatch.x + (bestMatch.width * 0.1775);
-           trueY = bestMatch.y + (bestMatch.height * 0.4629);
-           trueW = bestMatch.width * 0.6432;
-           trueH = bestMatch.height * 0.0774;
+           trueX = Math.round(bestMatch.x + (bestMatch.width * 0.1775));
+           trueY = Math.round(bestMatch.y + (bestMatch.height * 0.4629));
+           trueW = Math.round(bestMatch.width * 0.6432);
+           trueH = Math.round(bestMatch.height * 0.0774);
         } else if (shape === 'lockup') {
-           trueX = bestMatch.x + (bestMatch.width * 0.2271);
-           trueY = bestMatch.y + (bestMatch.height * 0.4090);
-           trueW = bestMatch.width * 0.5457;
-           trueH = bestMatch.height * 0.1818;
+           trueX = Math.round(bestMatch.x + (bestMatch.width * 0.2271));
+           trueY = Math.round(bestMatch.y + (bestMatch.height * 0.4090));
+           trueW = Math.round(bestMatch.width * 0.5457);
+           trueH = Math.round(bestMatch.height * 0.1818);
         }
 
         // 2. Calculate clear space margin accurately based on the TRUE height
@@ -288,15 +290,15 @@ export default function UnifiedBrandChecker() {
         margin = Math.round(margin);
         
         // 3. Define clear space boundaries (fixing the canvas clamping rendering bug)
-        let csLeft = Math.max(0, trueX - margin);
-        let csTop = Math.max(0, trueY - margin);
-        let csRight = Math.min(src.cols, trueX + trueW + margin);
-        let csBottom = Math.min(src.rows, trueY + trueH + margin);
+        let csLeft = Math.max(0, Math.min(src.cols - 1, trueX - margin));
+        let csTop = Math.max(0, Math.min(src.rows - 1, trueY - margin));
+        let csRight = Math.max(1, Math.min(src.cols, trueX + trueW + margin));
+        let csBottom = Math.max(1, Math.min(src.rows, trueY + trueH + margin));
         
         let csX = csLeft;
         let csY = csTop;
-        let csW = csRight - csLeft;
-        let csH = csBottom - csTop;
+        let csW = Math.max(1, csRight - csLeft);
+        let csH = Math.max(1, csBottom - csTop);
         
         let clearSpaceRoi = src.roi(new cv.Rect(csX, csY, csW, csH));
         let edges = new cv.Mat();
