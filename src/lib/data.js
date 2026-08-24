@@ -102,6 +102,46 @@ export const siteData = {
   resumePdfUrl: "/cv.pdf",
   articles: [
     {
+      slug: "vertical-saas-plg-flywheel-fintech",
+      title: "How Vertical SaaS Can Unlock a $280B PLG Flywheel: A Fintech Case Study",
+      date: "Aug 24, 2026",
+      track: "Product Strategy",
+      content: `
+        <p>As a Product Manager, I love dissecting hidden B2B workflows. We often obsess over the end-consumer experience (B2C), but massive business value is usually found in the messy, invisible handoffs between businesses.</p>
+        <p>Recently, I was analyzing the Community Financial Institution (CFI) space—specifically Credit Unions—and I stumbled onto a massive friction point in the auto lending market. Credit Unions hold nearly 30% of the US auto finance market, and over 60% of those loans are "Indirect" (meaning they are sourced directly at the dealership). That is a $280 Billion pipeline.</p>
+        <p>But the digital workflow powering this pipeline is broken. Here is a breakdown of the problem, and a Product-Led Growth (PLG) strategy to fix it.</p>
+        
+        <h2>The Problem: The 3-Hour Friction Loop</h2>
+        <p>When a car buyer applies for a loan at a dealership, the dealer's Finance & Insurance (F&I) Manager blasts the application to multiple lenders using a system like Dealertrack.</p>
+        <p>Often, the Credit Union approves the loan with stipulations (e.g., "We need a picture of the buyer's utility bill"). Because standard email isn't secure enough for financial data, the dealer is forced to log into a clunky, legacy encrypted email portal (like Zix or Proofpoint) specific to that one Credit Union.</p>
+        <p>This creates a massive bottleneck. Dealers hate remembering multiple portal passwords, and playing phone tag with loan officers takes hours. Meanwhile, the car buyer is sitting in the showroom getting impatient.</p>
+        <img src="/blog/current-state.jpg" alt="Current State Diagram: Indirect Lending Loan Usecase without dealer portal" class="w-full rounded-lg border border-[#333333] my-6" />
+        
+        <h2>The Solution: A "WhatsApp-like" B2B Dealer Portal</h2>
+        <p>Let's look at this through the lens of a market leader in CFI communications: Eltropy. Eltropy already provides secure, compliant unified communications (text, video, secure links) for Credit Unions.</p>
+        <p>If Eltropy extended a lightweight, zero-auth "Dealer Portal" to the F&I Managers, they could bypass encrypted email entirely. The dealer simply receives a secure SMS link, snaps a picture of the utility bill on an iPad, and texts it securely into the Credit Union underwriter's unified inbox.</p>
+        <p>A 3-hour friction loop drops to 3 minutes.</p>
+        <img src="/blog/future-state.jpg" alt="Future State Diagram: Indirect Lending Loan Usecase with dealer portal" class="w-full rounded-lg border border-[#333333] my-6" />
+        
+        <h2>The Strategy: The B2B PLG Flywheel</h2>
+        <p>Building a portal is a feature. How you distribute it is a strategy.</p>
+        <p>If a company like Eltropy gives this portal to the dealerships for free, it unlocks a massive Product-Led Growth (PLG) flywheel.</p>
+        <ul>
+          <li><strong>The Wedge:</strong> Dealerships want speed. If Credit Union A (using Eltropy) clears stipulations in 3 minutes, and Credit Union B requires a fax or clunky email portal, the dealer will funnel more loans to Credit Union A.</li>
+          <li><strong>The Flywheel:</strong> Dealers become evangelists. They will actively pressure non-Eltropy Credit Unions to adopt the platform because it makes their lives easier and gets them paid faster.</li>
+          <li><strong>The Revenue:</strong> The software company's sales team can now approach cold Credit Unions and say, "Your top 5 local dealerships are already using our network. Buy our platform to seamlessly integrate with them and win back your loan volume."</li>
+        </ul>
+        
+        <h2>The Full Strategy Memo (PR/FAQ)</h2>
+        <p>To pressure-test this idea, I wrote a complete, Amazon-style PR/FAQ detailing the Go-To-Market strategy, the engineering constraints (reusing existing secure links), and the specific value propositions for all stakeholders.</p>
+        <p><a href="https://docs.google.com/document/d/1cCEZOi3diJ1TIRB2UCjD9CL_JsOrMEPOy6M44Fi6kGM/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-[#111111] border border-[#333333] px-4 py-3 text-white font-medium hover:bg-[#222222] transition-colors rounded-md mt-2">
+          📄 Read the full 2-page PR/FAQ on Google Docs (Opens in new tab)
+        </a></p>
+        
+        <p>I am currently exploring my next Product Management Leadership roles / Product Consultant gigs. If you love talking about B2B network effects, PLG, and Fintech, my DMs are open!</p>
+      `
+    },
+    {
       slug: "product-strategy-proposal-modeling-anthropic-enterprise-playbook",
       title: "Product Strategy Proposal: How We Modeled Anthropic's Enterprise Playbook 18 Months in Advance",
       date: "Jul 10, 2026",
