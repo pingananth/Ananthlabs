@@ -9,7 +9,9 @@ export default function Header() {
           Ananth Labs
         </Link>
         <div className="flex items-center gap-6">
-          <nav className="hidden md:flex gap-6 text-sm font-medium">
+          <Link href="/training" className="lg:hidden text-sm font-medium text-foreground">Training</Link>
+          <nav className="hidden lg:flex gap-6 text-sm font-medium">
+            <Link href="/training" className="text-foreground hover:opacity-80 transition-opacity">Training</Link>
             <Link href="/#portfolio" className="text-[#a1a1aa] hover:text-foreground transition-colors">Portfolio</Link>
             <Link href="/blog" className="text-[#a1a1aa] hover:text-foreground transition-colors">Writing</Link>
             <Link href="/log" className="text-[#a1a1aa] hover:text-foreground transition-colors">Visual Log</Link>

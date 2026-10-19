@@ -99,6 +99,147 @@ export const siteData = {
     { id: 25, type: "Leading", location: "Division E", year: "2026", caption: "Introducing Division E Area Directors.", heightClass: "h-80", imageClass: "object-top", imageUrl: "/visuallog/IntroducingDivEAD.JPG" },
     { id: 26, type: "Building", location: "Toastmasters", year: "Oct 2024", caption: "Test Speaker Area Contest.", heightClass: "h-72", imageUrl: "/visuallog/testspeaker-areacontest.jpg" }
   ],
+  // Training page content (/training). Edit programs, FAQs and videos here.
+  training: {
+    calendlyUrl: "https://calendly.com/pingananth/30min",
+    proof: [
+      { value: "14 yrs", label: "Engineering + product leadership" },
+      { value: "10+", label: "AI products shipped and live" },
+      { value: "500+", label: "Professionals trained" },
+      { value: "Hands-on", label: "Every session ships real code" },
+    ],
+    programs: [
+      {
+        id: "claude-code-teams",
+        title: "Claude Code for Engineering Teams",
+        tag: "Most requested",
+        duration: "1–2 days",
+        format: "Online or onsite · up to 25 engineers",
+        audience: "Software engineers, tech leads, QA and DevOps teams",
+        outcomes: [
+          "Ship a real ticket from your backlog to PR using Claude Code",
+          "Set up CLAUDE.md, permissions and hooks for team-wide consistency",
+          "Build custom skills, subagents and MCP integrations for your stack",
+          "Review, test and secure AI-written code before it merges",
+        ],
+      },
+      {
+        id: "fde-bootcamp",
+        title: "Forward Deployed Engineer (FDE) Bootcamp",
+        tag: "Bootcamp",
+        duration: "4–6 weeks · part-time",
+        format: "Cohort-based · live sessions + capstone",
+        audience: "Engineers moving into customer-facing AI delivery roles",
+        outcomes: [
+          "Scope an AI pilot with a customer and define success metrics",
+          "Build and deploy agents, RAG pipelines and tool integrations",
+          "Run evals and handle reliability, cost and safety trade-offs",
+          "Present a working capstone to stakeholders",
+        ],
+      },
+      {
+        id: "genai-bootcamp",
+        title: "GenAI Bootcamp for Builders",
+        tag: "Bootcamp",
+        duration: "2–5 days",
+        format: "Online or onsite · beginner to intermediate",
+        audience: "Developers, students and product teams new to GenAI",
+        outcomes: [
+          "Understand LLMs, prompting, context and tool use from first principles",
+          "Build a working AI app end to end in the session",
+          "Know when to use prompts vs RAG vs agents vs fine-tuning",
+        ],
+      },
+      {
+        id: "genai-leaders",
+        title: "GenAI for Leaders & Non-Tech Teams",
+        tag: "Half day",
+        duration: "3–4 hours",
+        format: "Workshop · any team size",
+        audience: "Managers, leadership, HR, sales and operations teams",
+        outcomes: [
+          "See what AI can and cannot do today, with live demos",
+          "Spot high-ROI AI use cases in your own workflows",
+          "Leave with a safe-usage policy and a 90-day adoption plan",
+        ],
+      },
+    ],
+    consulting: [
+      { title: "AI Adoption Roadmap", text: "Audit your workflows, pick the right use cases and plan the rollout." },
+      { title: "Pilot Builds", text: "I build the first working version of your AI tool or agent with your team." },
+      { title: "Claude Code Rollout", text: "Set up org-wide configs, guardrails and champions so adoption sticks." },
+    ],
+    // Teaching samples. Set youtubeId once a video is live; null shows a "coming soon" card.
+    videos: [
+      { youtubeId: "WJNMCruqBmQ", title: "Claude Code: live demo session", question: "What will my engineers actually do in the session?" },
+      { youtubeId: "58noXo5HRSI", title: "FDE Training: sample session", question: "What does Forward Deployed Engineering training look like?" },
+      { youtubeId: "rkw5FgxK59M", title: "Demo Day: presenting our AI product", question: "Can he explain AI to a non-technical room?" },
+    ],
+    // Cohort feedback shown on /training (featured quote also on the home page)
+    cohortFeedback: {
+      label: "Sep '26 Cohort · Claude Certified Architect Foundations",
+      stats: ["15 IT professionals", "~10 years' average experience", "25 days"],
+      featured: {
+        quote: "Ananth is comprehensive about the curriculum, goes above and beyond to ensure the cohort understands the concepts. He also broadens the vision for participants and encourages to aim higher.",
+        source: "Course feedback form",
+        badges: ["Rated 5/5", "10/10 would recommend"],
+      },
+      quotes: [
+        { quote: "AI was a blackbox for me prior to this course. You got us hooked and explained concepts in a simple language.", name: "Shiva" },
+        { quote: "Learnt many things, got clarifications, got complexities simplified. Have a clogged road cleared. I gathered significant knowledge to face my meetings confidently.", name: "Girish" },
+        { quote: "Your ability to explain complex concepts with clarity and patience made learning both effective and enjoyable.", name: "Piyush" },
+        { quote: "It was a wonderful session, and I got a better understanding of the Claude AI.", name: "Ramesh" },
+        { quote: "Appreciate your patience and your structured approach.", name: "Abhishek" },
+        { quote: "You put in structured plan and made it easy for us to understand the topics in simple way.", name: "Murali" },
+      ],
+      closing: { quote: "Hope we will have CCAR Pro course by Ananth sir", name: "Shiva", note: "asking what comes next" },
+    },
+    process: [
+      { step: "01", title: "Discovery call", text: "30 minutes on your team, stack and goals." },
+      { step: "02", title: "Tailored outline", text: "A custom agenda built around your codebase and use cases." },
+      { step: "03", title: "Hands-on delivery", text: "Live, build-first sessions. Every participant ships something." },
+      { step: "04", title: "Follow-up", text: "Recordings, materials and a post-training check-in on adoption." },
+    ],
+    faqs: [
+      {
+        q: "What will my team be able to do after the training?",
+        a: "Each program ends with participants shipping real work: a merged PR, a working agent or a deployed app. You get a clear list of skills covered, not just slides.",
+      },
+      {
+        q: "Can you tailor it to our tech stack and codebase?",
+        a: "Yes. After the discovery call I adapt the exercises to your languages, frameworks and real tickets. Under NDA, we can work directly in your repositories.",
+      },
+      {
+        q: "Is it safe to use AI coding tools on our code?",
+        a: "Security is part of every engineering program. We cover permission modes, data handling, secrets, review workflows and enterprise settings so your team adopts AI safely.",
+      },
+      {
+        q: "How do we measure ROI after the session?",
+        a: "We agree on 2–3 adoption metrics up front (for example, PR cycle time or tasks automated). I share a simple tracking template and check in after 30 days.",
+      },
+      {
+        q: "Online or onsite? What batch size works best?",
+        a: "Both work. Hands-on engineering sessions work best with up to 25 people. Awareness sessions for leaders can be any size.",
+      },
+      {
+        q: "What do participants need beforehand?",
+        a: "A laptop and access to the tools we agree on (for example, Claude Code licences). I send a short setup checklist one week before.",
+      },
+      {
+        q: "What does it cost?",
+        a: "Pricing depends on program, duration and team size. Book a discovery call or send an enquiry and I will share a proposal within 48 hours.",
+      },
+    ],
+    testimonials: [
+      { quote: "Everything is perfect, you make the session for all who don't have any prior knowledge of how prompting needs to be done.", name: "Anbu Kathiravan", role: "Attendee, GenAI Workshop at SSN College of Engineering" },
+      { quote: "This session is really good for beginners who don't know about AI-assisted development.", name: "Ajith Kumar A", role: "Attendee, GenAI Workshop at SSN College of Engineering" },
+    ],
+    photos: [
+      { src: "/visuallog/genai-workshop-ssn.jpg", caption: "GenAI Workshop · SSN College" },
+      { src: "/visuallog/genai-workshop-ssn-2.jpg", caption: "Hands-on build session · SSN" },
+      { src: "/visuallog/DistrictOfficersTrainingProgram-Day 2-Workshop.JPG", caption: "Leadership training workshop" },
+    ],
+  },
   resumePdfUrl: "/cv.pdf",
   articles: [
     {

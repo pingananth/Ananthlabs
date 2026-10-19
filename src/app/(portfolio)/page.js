@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { siteData } from "@/lib/data";
 import { trackEvent } from "@/utils/analytics";
+import { VideoCard, FeaturedFeedback } from "@/components/portfolio/TeachingMedia";
 
 export default function Home() {
   return (
@@ -22,9 +23,47 @@ export default function Home() {
           <a href="#portfolio" onClick={() => trackEvent('click_view_portfolio', { location: 'hero' })} className="bg-white text-black px-6 py-3 font-semibold hover:bg-gray-200 transition-colors">
             [ View Portfolio ]
           </a>
+          <Link href="/training" onClick={() => trackEvent('click_training_page', { location: 'hero' })} className="border border-[#333333] px-6 py-3 font-semibold hover:bg-[#111111] hover:border-gray-400 transition-colors text-white">
+            [ Corporate Training ]
+          </Link>
           <a href="#partner" onClick={() => trackEvent('click_partner', { location: 'hero' })} className="border border-[#333333] px-6 py-3 font-semibold hover:bg-[#111111] hover:border-gray-400 transition-colors text-white">
             [ Let's Talk ]
           </a>
+        </div>
+      </section>
+
+      {/* Training & Teaching */}
+      <section id="training" className="scroll-mt-24">
+        <div className="mb-12 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+          <div>
+            <h2 className="text-3xl font-bold tracking-tight text-white">Training & Teaching</h2>
+            <p className="text-[#a1a1aa] mt-2">Hands-on Claude Code, FDE and GenAI bootcamps for teams.</p>
+          </div>
+          <Link href="/training" onClick={() => trackEvent('click_training_page', { location: 'home_training_section' })} className="text-sm font-semibold text-white hover:text-blue-400 transition-colors">
+            See all programs →
+          </Link>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {siteData.training.videos.slice(0, 2).map((v) => (
+            <VideoCard key={v.title} video={v} />
+          ))}
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+          <FeaturedFeedback feedback={siteData.training.cohortFeedback} />
+          <div className="border border-[#333333] bg-[#0a0a0a] p-8 flex flex-col justify-center gap-6">
+            <h3 className="text-2xl font-bold text-white leading-tight">Bring AI training to your team.</h3>
+            <p className="text-[#a1a1aa] leading-relaxed">
+              Tailored to your stack. Online or onsite. Every participant ships real work by the end of the session.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link href="/training#enquire" onClick={() => trackEvent('click_training_page', { location: 'home_training_cta' })} className="bg-white text-black px-6 py-3 font-semibold hover:bg-gray-200 transition-colors">
+                [ Request a Proposal ]
+              </Link>
+              <a href={siteData.training.calendlyUrl} target="_blank" rel="noopener noreferrer" onClick={() => trackEvent('click_book_call', { location: 'home_training_cta' })} className="border border-[#333333] px-6 py-3 font-semibold hover:bg-[#111111] hover:border-gray-400 transition-colors text-white">
+                [ Book a Call ]
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -309,6 +348,7 @@ export default function Home() {
           <div className="space-y-2">
             <label htmlFor="intent" className="text-sm font-medium text-[#a1a1aa]">Engagement Intent</label>
             <select id="intent" name="intent" className="w-full bg-[#0a0a0a] border border-[#333333] p-3 text-white focus:outline-none focus:border-white transition-colors appearance-none">
+              <option value="training">Corporate Training / Bootcamp</option>
               <option value="speaking">Speaking / Panel Discussion</option>
               <option value="workshop">Weekend Workshop</option>
               <option value="freelance">Freelance Consulting</option>
